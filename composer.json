@@ -1,0 +1,33 @@
+{
+    "name": "fxp/config",
+    "type": "library",
+    "description": "Extra features of Symfony Config",
+    "keywords": ["Config", "Loader", "Annotation"],
+    "homepage": "https://github.com/fxpio/fxp-config",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "François Pluchino",
+            "email": "francois.pluchino@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.1.0",
+        "doctrine/annotations": "^1.6.0",
+        "symfony/config": "^4.3.0",
+        "symfony/finder": "^4.3.0"
+    },
+    "autoload": {
+        "psr-4": { "Fxp\\Component\\Config\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        }
+    }
+}
