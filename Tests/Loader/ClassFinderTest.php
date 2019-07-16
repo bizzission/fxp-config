@@ -29,7 +29,7 @@ final class ClassFinderTest extends TestCase
                 \dirname(__DIR__).'/Fixtures',
             ],
             [
-                'Foo',
+                'Annotation',
             ]
         );
 
