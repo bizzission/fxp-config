@@ -12,13 +12,14 @@
 namespace Fxp\Component\Config\Loader;
 
 use Doctrine\Common\Annotations\Reader;
+use Symfony\Component\Config\Loader\Loader;
 
 /**
  * The abstract class of annotation loader.
  *
  * @author François Pluchino <francois.pluchino@gmail.com>
  */
-abstract class AbstractAnnotationLoader
+abstract class AbstractAnnotationLoader extends Loader
 {
     /**
      * @var Reader
@@ -26,19 +27,12 @@ abstract class AbstractAnnotationLoader
     protected $reader;
 
     /**
-     * @var ClassFinder
-     */
-    protected $classFinder;
-
-    /**
      * Constructor.
      *
-     * @param Reader      $reader      The annotation reader
-     * @param ClassFinder $classFinder The class finder
+     * @param Reader $reader The annotation reader
      */
-    public function __construct(Reader $reader, ClassFinder $classFinder)
+    public function __construct(Reader $reader)
     {
         $this->reader = $reader;
-        $this->classFinder = $classFinder;
     }
 }
