@@ -27,12 +27,19 @@ abstract class AbstractAnnotationLoader extends Loader
     protected $reader;
 
     /**
+     * @var ClassFinder
+     */
+    protected $classFinder;
+
+    /**
      * Constructor.
      *
-     * @param Reader $reader The annotation reader
+     * @param Reader           $reader      The annotation reader
+     * @param null|ClassFinder $classFinder The class finder
      */
-    public function __construct(Reader $reader)
+    public function __construct(Reader $reader, ?ClassFinder $classFinder = null)
     {
         $this->reader = $reader;
+        $this->classFinder = $classFinder ?? new ClassFinder();
     }
 }

@@ -52,13 +52,13 @@ class ClassFinder
      *
      * @return string[]
      */
-    public function findClasses(): array
+    public function findClasses(array $paths = []): array
     {
         if (null === $this->cache) {
             $finder = Finder::create()
                 ->ignoreVCS(true)
                 ->ignoreDotFiles(true)
-                ->in($this->includePaths)
+                ->in(array_unique(array_merge($this->includePaths, $paths)))
                 ->exclude($this->excludePaths)
                 ->name('*.php')
             ;
