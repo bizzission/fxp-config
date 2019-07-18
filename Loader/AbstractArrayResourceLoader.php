@@ -29,7 +29,7 @@ abstract class AbstractArrayResourceLoader extends Loader
      *
      * @return ConfigCollectionInterface
      */
-    public function load($resource, $type = null): ConfigCollectionInterface
+    public function load($resource, $type = null)
     {
         $resources = $this->createConfigCollection();
 
