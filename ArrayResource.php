@@ -48,14 +48,14 @@ class ArrayResource implements \IteratorAggregate
     /**
      * Add the resource.
      *
-     * @param mixed       $resource The resource
-     * @param null|string $type     The resource type
+     * @param ConfigResource|mixed $resource The resource
+     * @param null|string          $type     The resource type
      *
      * @return static
      */
     public function add($resource, ?string $type = null): self
     {
-        $this->resources[] = new ConfigResource($resource, $type);
+        $this->resources[] = $resource instanceof ConfigResource ? $resource : new ConfigResource($resource, $type);
 
         return $this;
     }
