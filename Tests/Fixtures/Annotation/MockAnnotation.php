@@ -15,6 +15,7 @@ use Fxp\Component\Config\Annotation\AbstractAnnotation;
 
 /**
  * @author François Pluchino <francois.pluchino@gmail.com>
+ * @Annotation
  */
 class MockAnnotation extends AbstractAnnotation
 {
@@ -33,5 +34,10 @@ class MockAnnotation extends AbstractAnnotation
     public function getFoo(): ?string
     {
         return $this->foo;
+    }
+
+    public function getAliasName(): ?string
+    {
+        return 'mock';
     }
 }

@@ -11,6 +11,7 @@
 
 namespace Fxp\Component\Config\Tests\Annotation;
 
+use Fxp\Component\Config\Annotation\AbstractAnnotation;
 use Fxp\Component\Config\Exception\RuntimeException;
 use Fxp\Component\Config\Tests\Fixtures\Annotation\MockAnnotation;
 use PHPUnit\Framework\TestCase;
@@ -22,6 +23,17 @@ use PHPUnit\Framework\TestCase;
  */
 final class AbstractAnnotationTest extends TestCase
 {
+    /**
+     * @throws
+     */
+    public function testBasicMethods(): void
+    {
+        $mock = $this->getMockForAbstractClass(AbstractAnnotation::class);
+
+        static::assertNull($mock->getAliasName());
+        static::assertFalse($mock->allowArray());
+    }
+
     public function testAnnotationConfig(): void
     {
         $mock = new MockAnnotation([
@@ -29,7 +41,7 @@ final class AbstractAnnotationTest extends TestCase
         ]);
 
         static::assertSame('bar', $mock->getFoo());
-        static::assertNull($mock->getAliasName());
+        static::assertSame('mock', $mock->getAliasName());
         static::assertFalse($mock->allowArray());
     }
 

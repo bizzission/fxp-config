@@ -31,6 +31,7 @@ final class ClassFinderTest extends TestCase
             [
                 'Annotation',
                 'Cache',
+                'Controller',
             ]
         );
 
