@@ -29,6 +29,8 @@ final class AbstractAnnotationTest extends TestCase
         ]);
 
         static::assertSame('bar', $mock->getFoo());
+        static::assertNull($mock->getAliasName());
+        static::assertFalse($mock->allowArray());
     }
 
     public function testAnnotationConfigWithInvalidKey(): void

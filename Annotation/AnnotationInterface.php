@@ -16,4 +16,17 @@ namespace Fxp\Component\Config\Annotation;
  */
 interface AnnotationInterface
 {
+    /**
+     * Returns the alias name for an annotated configuration.
+     *
+     * @return null|string
+     */
+    public function getAliasName(): ?string;
+
+    /**
+     * Returns whether multiple annotations of this type are allowed.
+     *
+     * @return bool
+     */
+    public function allowArray(): bool;
 }

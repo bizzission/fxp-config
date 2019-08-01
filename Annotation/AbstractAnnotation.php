@@ -33,4 +33,20 @@ abstract class AbstractAnnotation implements AnnotationInterface
             $this->{$name}($v);
         }
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAliasName(): ?string
+    {
+        return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function allowArray(): bool
+    {
+        return false;
+    }
 }
