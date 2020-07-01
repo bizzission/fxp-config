@@ -15,13 +15,13 @@
     "prefer-stable": true,
     "require": {
         "php": "^7.1.0",
-        "doctrine/annotations": "^1.6.0",
-        "symfony/config": "^4.3.0",
-        "symfony/finder": "^4.3.0"
+        "doctrine/annotations": "^1.10",
+        "symfony/config": "5.0.*",
+        "symfony/finder": "5.0.*"
     },
     "require-dev": {
-        "fxp/doctrine-extra": "^2.0.0",
-        "symfony/http-kernel": "^4.3.0"
+        "symfony/http-kernel": "5.0.*",
+        "fxp/doctrine-extra": "^1.1"
     },
     "autoload": {
         "psr-4": { "Fxp\\Component\\Config\\": "" },
@@ -33,5 +33,11 @@
         "branch-alias": {
             "dev-master": "2.0-dev"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/bizzission/fxp-doctrine-extra.git"
+        }
+    ]
 }
